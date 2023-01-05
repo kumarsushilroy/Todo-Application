@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">
+        
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 card shadow py-4 crd">
+                            <div class="card  bg-warning p-2">
+                                <h4 class="text-light">Todo-App</h4>
+                            </div>
+
+                            
+                                <div class="input-group mt-2 shadow">
+
+                                    <input type="text" class="form-control" placeholder="enter your task here"
+                                        [(ngModel)]="inputval" value="" aria-label="Recipient's username"
+                                        aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" (click)="addData()" type="button"
+                                            id="button-addon2">ADD +</button>
+                                    </div>
+                                </div>
+                            
+
+                            <div class="card mt-5 p-4 " style="height:500px; overflow-y:auto">
+                                <h4>Tasks: -</h4>
+                                <div class="row shadow mb-4" *ngFor="let data of dataArr">
+                                    <div class="col-md-8">
+                                        {{data.task}}
+                                    </div>
+
+                                    <div type="button" class="btn btn-primary col mr-1" data-toggle="modal" data-target="#exampleModal" (click)="callEdit(data)">
+                                        Edit
+                                    </div>
+                                        
+                                    <div class=" col btn btn-danger" (click)="deletingData(data)">Delete</div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div >
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="editedTask">
+                                                <div class="input-group-append">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary" (click)="UpdateData()">Update</button>
+                                                </div>
+                                              </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

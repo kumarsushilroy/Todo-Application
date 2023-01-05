@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "task": "How to apply for that ?"
+    },
+    {
+      "id": 2,
+      "task": "Who can apply for that ?"
+    },
+    {
+      "id": 3,
+      "task": "On which day they available ?"
+    },
+    {
+      "id": 4,
+      "task": "How long does it take to go ?"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
